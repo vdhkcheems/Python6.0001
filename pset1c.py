@@ -11,12 +11,10 @@ low = 0
 high = 10000
 
 steps = 0
-epsilon = 100.0
 annual_salary = x
-loop = True
-while loop:
+while True:
     guess = (low + high)//2
-    while (portion_down_payment - current_savings) > epsilon:
+    while (portion_down_payment - current_savings) > 100.0:
         current_savings += (current_savings*(r/12)) + (annual_salary/12)*(guess/10000)
         months += 1
         if months % 6 == 0:
@@ -34,11 +32,11 @@ while loop:
     else:
         optimumRate = guess / 10000
         possible = True
-        loop = False
+        break
     steps +=1
     if guess == 9999:
         possible = False
-        loop = False
+        break
 
 if possible:
     print('Best savings rate: ', optimumRate)
